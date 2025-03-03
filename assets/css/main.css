@@ -5968,6 +5968,10 @@ body .ui-tooltip {
   font-size: 16px;
   transition: 0.7s;
 }
+
+
+
+
 .rr-header-2-menu ul li a:hover {
   color: var(--rr-theme-1);
 }
@@ -5981,7 +5985,8 @@ body .ui-tooltip {
   background-color: transparent;
   border-radius: 0;
   border: none;
-  padding-right: 51px !important;
+
+ text-align: center;
 }
 
 .rr-btn.rr-header-spc {
@@ -12986,8 +12991,8 @@ body .ui-tooltip {
   line-height: 50px;
 }
 .rr-contact-1-item {
-  background: var(--rr-theme-1);
-  padding: 53px 50px;
+
+  padding: 55px 50px;
   border-bottom: 2px solid #f286a0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
@@ -13001,6 +13006,29 @@ body .ui-tooltip {
 .rr-contact-1-item:last-child {
   border-bottom: none;
 }
+/* Bize Ulaşın Kısmındaki Yazı Boyutunu Artırma */
+.rr-contact-1-info h4 {
+   font-size: 18px; /* Başlık boyutunu artır */
+   font-weight: bold;
+}
+
+.rr-contact-1-info span {
+   font-size: 16px; /* Email ve adres yazısının boyutunu artır */
+}
+
+/* Bize Ulaşın Kısmındaki Linki Yönlendirmeye Uygun Renk Yapma */
+.rr-contact-1-info a {
+   font-size: 16px;
+   color: #fff; /* Linki beyaz yap */
+   text-decoration: none;
+}
+
+.rr-contact-1-info a:hover {
+   text-decoration: underline; /* Hover efekti */
+}
+
+
+
 .rr-contact-1-icon span {
   width: 65px;
   height: 65px;

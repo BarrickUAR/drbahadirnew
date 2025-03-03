@@ -1022,3 +1022,25 @@
 	
 
 })(jQuery);
+
+document.addEventListener('DOMContentLoaded', function() {
+	const selectElement = document.querySelector('.nice-select');
+	const spanCurrent = selectElement.querySelector('.current');
+	const selectOptions = selectElement.querySelectorAll('.option');
+ 
+	// Dil seçimi yapıldığında bayrak ve metni güncelle
+	selectOptions.forEach(option => {
+	   option.addEventListener('click', function() {
+		  const selectedLang = this.textContent.trim();
+		  const selectedImg = this.querySelector('img').src;
+ 
+		  // Güncellenmiş bayrağı ve dili başlığa yerleştir
+		  spanCurrent.innerHTML = `<img src="${selectedImg}" width="20" height="20" alt="${selectedLang}"> ${selectedLang}`;
+ 
+		  // Seçili olan öğeyi işaretle
+		  selectOptions.forEach(opt => opt.classList.remove('selected', 'focus'));
+		  this.classList.add('selected', 'focus');
+	   });
+	});
+ });
+ 
