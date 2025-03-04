@@ -272,14 +272,16 @@
                            </li>
                            <li><a href="about.html">Hakkımda</a></li>
                            <li class="has-dropdown">
-                              <a href="service-details.html">Service</a>
+                              <a href="cilt-hastaliklari.html">Hastalıklar</a>
                               <ul class="submenu rr-submenu">
-                                 <li><a href="service-details.html">Service</a></li>
-                                 <li><a href="service-details.html">Service Details</a></li>
+                                 <li><a href="cilt-hastaliklari.html">Cilt Hastalıkları</a></li>
+                                 <li><a href="cilt-hastaliklari.html">Romatizmal H.</a></li>
+                                 <li><a href="cilt-hastaliklari.html">Akne</a></li>
+
                               </ul>
                            </li>
                            <li class="has-dropdown">
-                              <a href="#">Pages</a>
+                              <a href="#">Sayfalar</a>
                               <ul class="submenu rr-submenu">
                                  <li><a href="team.html">team</a></li>
                                  <li><a href="team-details.html">team details</a></li>
@@ -299,7 +301,7 @@
                                  <li><a href="blog-details.html">Blog Details</a></li>
                               </ul>
                            </li>
-                           <li><a href="contact.html">Contact</a></li>
+                           <li><a href="contact.html">İletişim</a></li>
                         </ul>
                      </nav>
                   </div>
@@ -363,7 +365,7 @@
                                     href="contact.html"><span>Bizimle iletişime geçin<i
                                           class="fa-sharp fa-solid fa-plus"></i></span></a>
                                  <a class="rr-btn-black wow rrfadeUp" data-wow-duration=".9s" data-wow-delay=".9s"
-                                    href="service-details.html"><span> Daha Fazla <i
+                                    href="cilt-hastaliklari.html"><span> Daha Fazla <i
                                           class="fa-sharp fa-solid fa-plus"></i></span></a>
                               </div>
                            </div>
@@ -402,18 +404,19 @@
                               <!-- Kullanıcı Bilgileri -->
                               <div class="col-xl-4 col-md-4 col-12 mb-30">
                                  <div class="rr-form-input-box rr-contact-1-border">
-                                    <input type="text" placeholder="Adınız*" required>
+                                    <input type="text" autocomplete="off" placeholder="Adınız*" required>
                                  </div>
                               </div>
                               <div class="col-xl-4 col-md-4 col-12 mb-30">
                                  <div class="rr-form-input-box rr-contact-1-border">
-                                    <input type="email" placeholder="Mail Adresiniz" required>
+                                    <input autocomplete="off" type="email" placeholder="Mail Adresiniz" required>
                                  </div>
                               </div>
                               <div class="col-xl-4 col-md-4 col-12 mb-30">
                                  <div class="rr-form-input-box rr-contact-1-border">
                                     <!-- Tarih Yazmalı ve Maskelenmiş -->
-                                    <input type="text" id="date-input" placeholder="Tarih* (GG/AA/YYYY)" required>
+                                    <input type="text" id="date-input" autocomplete="off"
+                                       placeholder="Tarih* (GG/AA/YYYY)" required>
                                  </div>
                               </div>
                            </div>
@@ -454,25 +457,32 @@
       </section>
 
       <script>
-
          document.getElementById("date-input").addEventListener("input", function (event) {
             let value = event.target.value;
-            value = value.replace(/[^0-9/]/g, '');
-            value = value.replace(/\//g, '/').replace(/\./g, '/');
+            value = value.replace(/[^0-9]/g, ''); // Sadece rakamlara izin ver
 
-            if (value.length > 2 && value[2] !== '/') {
+            if (value.length > 2) {
                value = value.substring(0, 2) + '/' + value.substring(2);
             }
-            if (value.length > 5 && value[5] !== '/') {
-               value = value.substring(ß0, 5) + '/' + value.substring(5);
+            if (value.length > 5) {
+               value = value.substring(0, 5) + '/' + value.substring(5);
+            }
+
+            // Yılın 0 ile başlamasını engelle
+            let parts = value.split('/');
+            if (parts.length === 3 && parts[2].startsWith('0')) {
+               parts[2] = parts[2].replace(/^0+/, '');
+               value = parts.join('/');
             }
 
             if (value.length > 10) {
                value = value.substring(0, 10);
             }
+
             event.target.value = value;
          });
       </script>
+
 
       <!-- contact area end -->
 
@@ -499,11 +509,11 @@
                         <img src="assets/img/feature/icon-1.png" alt="img">
                      </div>
                      <div class="rr-features-content text-center">
-                        <h3 class="rr-features-title"><a href="service-details.html">Sedef Hastalığı</a></h3>
+                        <h3 class="rr-features-title"><a href="cilt-hastaliklari.html">Sedef Hastalığı</a></h3>
                         <p>Sedef hastalığı, deri üzerinde kızarıklık ve döküntü benzeri belirtileri olan bir
                            hastalıktır. Türkiye’de yaklaşık 1 milyon kişide bulunan hastalık, derideki belirtileri
                            nedeni ile bulaşıcı olduğu düşünülen ama bulaşıcı olmayan bir hastalıktır.</p>
-                        <a class="rr-features-btn" href="service-details.html"><span>Daha Fazla... <i
+                        <a class="rr-features-btn" href="cilt-hastaliklari.html"><span>Daha Fazla... <i
                                  class="fa-solid fa-angle-right"></i></span></a>
                      </div>
                   </div>
@@ -518,11 +528,11 @@
                         <img src="assets/img/feature/icon-2.png" alt="img">
                      </div>
                      <div class="rr-features-content text-center">
-                        <h3 class="rr-features-title"><a href="service-details.html">Egzama Hastalığı</a></h3>
+                        <h3 class="rr-features-title"><a href="cilt-hastaliklari.html">Egzama Hastalığı</a></h3>
                         <p>Egzama bir deri hastalık türüdür,lakin her hangi bir tehlikesi bulunmayan bir hastalıktır.
                            İnsanlardan 12 kişiden 1 kişi egzama hastalığını geçirmiştir yani yaygın olan bir
                            hastalıktır.</p>
-                        <a class="rr-features-btn" href="service-details.html"><span>Daha Fazla... <i
+                        <a class="rr-features-btn" href="cilt-hastaliklari.html"><span>Daha Fazla... <i
                                  class="fa-solid fa-angle-right"></i></span></a>
                      </div>
                   </div>
@@ -537,12 +547,12 @@
                         <img src="assets/img/feature/icon-3.png" alt="img">
                      </div>
                      <div class="rr-features-content text-center">
-                        <h3 class="rr-features-title"><a href="service-details.html">Liken planus</a></h3>
+                        <h3 class="rr-features-title"><a href="cilt-hastaliklari.html">Liken planus</a></h3>
                         <p>Liken Planus deride meydana gelen bir hastalık türüdür. Hastalığın oluşmasının psikolojik
                            olduğu varsayılmakta, kesin sebep olan herhangi bir sebebe rastlanılmamıştır. İnsan vücudunda
                            iç deride, erkek ve kadınlarda cinsel organ çevresinde
                            kol bacaklarda sık görülmektedir. </p>
-                        <a class="rr-features-btn" href="service-details.html"><span>Daha Fazla... <i
+                        <a class="rr-features-btn" href="cilt-hastaliklari.html"><span>Daha Fazla... <i
                                  class="fa-solid fa-angle-right"></i></span></a>
                      </div>
                   </div>
@@ -557,11 +567,11 @@
                         <img src="assets/img/feature/icon-4.png" alt="img">
                      </div>
                      <div class="rr-features-content text-center">
-                        <h3 class="rr-features-title"><a href="service-details.html">İktiyozis</a> </h3>
+                        <h3 class="rr-features-title"><a href="cilt-hastaliklari.html">İktiyozis</a> </h3>
                         <p>İktiyozis Vulgaris genellikle balık derisi hastalığı olarak bilinen bir deri hastalığıdır.
                            Sürekli ölen deri hücreleri ciltte birikerek balık pulu gibi görüntüler oluşmasına neden
                            olur.</p>
-                        <a class="rr-features-btn" href="service-details.html"><span>Daha Fazla... <i
+                        <a class="rr-features-btn" href="cilt-hastaliklari.html"><span>Daha Fazla... <i
                                  class="fa-solid fa-angle-right"></i></span></a>
                      </div>
                   </div>
@@ -633,16 +643,16 @@
                         </div>
                      </div>
                      <div class="rr-service-1-content">
-                        <h3 class="rr-service-1-title"><a href="service-details.html">Medicine & Health</a></h3>
+                        <h3 class="rr-service-1-title"><a href="cilt-hastaliklari.html">Medicine & Health</a></h3>
                         <p>Medical is the knowledge or master event
                            dentify the error of the we website
                            best coding page speed.</p>
                         <div class="rr-service-1-list">
                            <ul class="d-flex align-items-center">
-                              <li><i class="fa-solid fa-check"></i> <a href="service-details.html">Medicine & Health</a>
+                              <li><i class="fa-solid fa-check"></i> <a href="cilt-hastaliklari.html">Medicine & Health</a>
                               </li>
                               <li class="ml-20"><i class="fa-solid fa-check"></i><a
-                                    href="service-details.html">Equipment</a></li>
+                                    href="cilt-hastaliklari.html">Equipment</a></li>
                            </ul>
                         </div>
                      </div>
@@ -660,16 +670,16 @@
                         </div>
                      </div>
                      <div class="rr-service-1-content">
-                        <h3 class="rr-service-1-title"><a href="service-details.html">Medical Counseling</a></h3>
+                        <h3 class="rr-service-1-title"><a href="cilt-hastaliklari.html">Medical Counseling</a></h3>
                         <p>Medical is the knowledge or master event
                            dentify the error of the we website
                            best coding page speed.</p>
                         <div class="rr-service-1-list">
                            <ul class="d-flex align-items-center">
-                              <li><i class="fa-solid fa-check"></i> <a href="service-details.html">Medicine & Health</a>
+                              <li><i class="fa-solid fa-check"></i> <a href="cilt-hastaliklari.html">Medicine & Health</a>
                               </li>
                               <li class="ml-20"><i class="fa-solid fa-check"></i><a
-                                    href="service-details.html">Equipment</a></li>
+                                    href="cilt-hastaliklari.html">Equipment</a></li>
                            </ul>
                         </div>
                      </div>
@@ -687,16 +697,16 @@
                         </div>
                      </div>
                      <div class="rr-service-1-content">
-                        <h3 class="rr-service-1-title"><a href="service-details.html">Economical Choice</a></h3>
+                        <h3 class="rr-service-1-title"><a href="cilt-hastaliklari.html">Economical Choice</a></h3>
                         <p>Medical is the knowledge or master event
                            dentify the error of the we website
                            best coding page speed.</p>
                         <div class="rr-service-1-list">
                            <ul class="d-flex align-items-center">
-                              <li><i class="fa-solid fa-check"></i> <a href="service-details.html">Medicine & Health</a>
+                              <li><i class="fa-solid fa-check"></i> <a href="cilt-hastaliklari.html">Medicine & Health</a>
                               </li>
                               <li class="ml-20"><i class="fa-solid fa-check"></i><a
-                                    href="service-details.html">Equipment</a></li>
+                                    href="cilt-hastaliklari.html">Equipment</a></li>
                            </ul>
                         </div>
                      </div>
@@ -714,16 +724,16 @@
                         </div>
                      </div>
                      <div class="rr-service-1-content">
-                        <h3 class="rr-service-1-title"><a href="service-details.html">Injection Syringe</a></h3>
+                        <h3 class="rr-service-1-title"><a href="cilt-hastaliklari.html">Injection Syringe</a></h3>
                         <p>Medical is the knowledge or master event
                            dentify the error of the we website
                            best coding page speed.</p>
                         <div class="rr-service-1-list">
                            <ul class="d-flex align-items-center">
-                              <li><i class="fa-solid fa-check"></i> <a href="service-details.html">Medicine & Health</a>
+                              <li><i class="fa-solid fa-check"></i> <a href="cilt-hastaliklari.html">Medicine & Health</a>
                               </li>
                               <li class="ml-20"><i class="fa-solid fa-check"></i><a
-                                    href="service-details.html">Equipment</a></li>
+                                    href="cilt-hastaliklari.html">Equipment</a></li>
                            </ul>
                         </div>
                      </div>
@@ -741,16 +751,16 @@
                         </div>
                      </div>
                      <div class="rr-service-1-content">
-                        <h3 class="rr-service-1-title"><a href="service-details.html">Qualified Doctors</a></h3>
+                        <h3 class="rr-service-1-title"><a href="cilt-hastaliklari.html">Qualified Doctors</a></h3>
                         <p>Medical is the knowledge or master event
                            dentify the error of the we website
                            best coding page speed.</p>
                         <div class="rr-service-1-list">
                            <ul class="d-flex align-items-center">
-                              <li><i class="fa-solid fa-check"></i> <a href="service-details.html">Medicine & Health</a>
+                              <li><i class="fa-solid fa-check"></i> <a href="cilt-hastaliklari.html">Medicine & Health</a>
                               </li>
                               <li class="ml-20"><i class="fa-solid fa-check"></i><a
-                                    href="service-details.html">Equipment</a></li>
+                                    href="cilt-hastaliklari.html">Equipment</a></li>
                            </ul>
                         </div>
                      </div>
@@ -768,16 +778,16 @@
                         </div>
                      </div>
                      <div class="rr-service-1-content">
-                        <h3 class="rr-service-1-title"><a href="service-details.html">Science Laboratory</a></h3>
+                        <h3 class="rr-service-1-title"><a href="cilt-hastaliklari.html">Science Laboratory</a></h3>
                         <p>Medical is the knowledge or master event
                            dentify the error of the we website
                            best coding page speed.</p>
                         <div class="rr-service-1-list">
                            <ul class="d-flex align-items-center">
-                              <li><i class="fa-solid fa-check"></i> <a href="service-details.html">Medicine & Health</a>
+                              <li><i class="fa-solid fa-check"></i> <a href="cilt-hastaliklari.html">Medicine & Health</a>
                               </li>
                               <li class="ml-20"><i class="fa-solid fa-check"></i><a
-                                    href="service-details.html">Equipment</a></li>
+                                    href="cilt-hastaliklari.html">Equipment</a></li>
                            </ul>
                         </div>
                      </div>
@@ -808,7 +818,7 @@
                            <i class="icofont-blood"></i>
                         </div>
                         <div class="rr-icon-box-content">
-                           <h6 class="rr-icon-box-title"><a href="service-details.html">Improve Your Blood</a></h6>
+                           <h6 class="rr-icon-box-title"><a href="cilt-hastaliklari.html">Improve Your Blood</a></h6>
                            <p class="rr-icon-box-description">Lorem Ipsum is simply dummy text of the printing</p>
                         </div>
                      </div>
@@ -819,7 +829,7 @@
                            <i class="icofont-heart-beat-alt"></i>
                         </div>
                         <div class="rr-icon-box-content">
-                           <h6 class="rr-icon-box-title"><a href="service-details.html">Normal Heart Beat</a></h6>
+                           <h6 class="rr-icon-box-title"><a href="cilt-hastaliklari.html">Normal Heart Beat</a></h6>
                            <p class="rr-icon-box-description">Lorem Ipsum is simply dummy text of the printing</p>
                         </div>
                      </div>
@@ -830,7 +840,7 @@
                            <i class="icofont-surgeon"></i>
                         </div>
                         <div class="rr-icon-box-content">
-                           <h6 class="rr-icon-box-title"><a href="service-details.html">Surgeon Of Allha</a></h6>
+                           <h6 class="rr-icon-box-title"><a href="cilt-hastaliklari.html">Surgeon Of Allha</a></h6>
                            <p class="rr-icon-box-description">Lorem Ipsum is simply dummy text of the printing</p>
                         </div>
                      </div>
@@ -848,7 +858,7 @@
                            <i class="icofont-brain"></i>
                         </div>
                         <div class="rr-icon-box-content">
-                           <h6 class="rr-icon-box-title"><a href="service-details.html">Brain Insanely Fast</a></h6>
+                           <h6 class="rr-icon-box-title"><a href="cilt-hastaliklari.html">Brain Insanely Fast</a></h6>
                            <p class="rr-icon-box-description">Lorem Ipsum is simply dummy text of the printing</p>
                         </div>
                      </div>
@@ -859,7 +869,7 @@
                            <i class="icofont-doctor-alt"></i>
                         </div>
                         <div class="rr-icon-box-content">
-                           <h6 class="rr-icon-box-title"><a href="service-details.html">Doctor Support</a></h6>
+                           <h6 class="rr-icon-box-title"><a href="cilt-hastaliklari.html">Doctor Support</a></h6>
                            <p class="rr-icon-box-description">Lorem Ipsum is simply dummy text of the printing</p>
                         </div>
                      </div>
@@ -870,7 +880,7 @@
                            <i class="icofont-patient-bed"></i>
                         </div>
                         <div class="rr-icon-box-content">
-                           <h6 class="rr-icon-box-title"><a href="service-details.html">Medical Bad Health</a></h6>
+                           <h6 class="rr-icon-box-title"><a href="cilt-hastaliklari.html">Medical Bad Health</a></h6>
                            <p class="rr-icon-box-description">Lorem Ipsum is simply dummy text of the printing</p>
                         </div>
                      </div>
@@ -881,40 +891,56 @@
       </section>
       <!-- choose  area mobail end -->
       <!-- video area start -->
-      <section class="rr-video-arae rr-video-before p-relative pt-115 pb-115 fix"
-         data-background="assets/img/video/bg-2-1.jpg">
+
+      <section class="rr-video-arae rr-video-before p-relative pt-115 pb-115 fix">
+         <!-- Video Arka Plan -->
+         <video autoplay muted loop playsinline class="background-video">
+            <source src="assets/video/background-video.mp4" type="video/mp4">
+            Tarayıcınız video etiketini desteklemiyor.
+         </video>
+
          <div class="rr-video-shap z-index-1 d-none d-xxl-block">
             <img src="assets/img/video/plus-icon.png" alt="img">
          </div>
          <div class="container">
             <div class="row">
-               <div class="col-xl-6 col-lg-8  col-md-10 col-12 ">
+               <div class="col-xl-6 col-lg-8 col-md-10 col-12">
                   <div class="rr-video-title-box z-index-2">
                      <span class="rr-video-subtitle p-relative wow rrfadeUp" data-wow-duration=".9s"
-                        data-wow-delay=".3s"><img src="assets/img/testimonial/section-icon.png" alt="img"> OUR VIDEO
-                        MORE</span>
-                     <h4 class="rr-video-title wow rrfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">Immediately
-                        Video Medical <br />
-                        Every Health Care </h4>
-                     <p class="wow rrfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">Medical tailored it design,
-                        management & support services <br />
-                        business agency elit, sed do eiusmod tempor. </p>
+                        data-wow-delay=".3s">
+                        <img src="assets/img/testimonial/section-icon.png" alt="img"> OUR VIDEO MORE
+                     </span>
+                     <h4 class="rr-video-title wow rrfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
+                        Immediately Video Medical <br />
+                        Every Health Care
+                     </h4>
+                     <p class="wow rrfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">
+                        Medical tailored it design, management & support services <br />
+                        business agency elit, sed do eiusmod tempor.
+                     </p>
                      <a class="rr-btn-1 popup-video wow rrfadeUp" data-wow-duration=".9s" data-wow-delay=".9s"
-                        href="https://www.youtube.com/watch?v=cEgbPHcUhT4"><span>Video MOre <i
-                              class="fa-sharp fa-solid fa-plus"></i></span></a>
-                  </div>
-               </div>
-               <div class="col-xl-6  col-lg-4 col-md-2  col-12 p-relative">
-                  <div class="rr-video-area">
-                     <div class="rr-video-play z-index-2">
-                        <a class="popup-video" href="https://www.youtube.com/watch?v=cEgbPHcUhT4"><i
-                              class="fa-regular fa-play"></i></a>
-                     </div>
+                        href="https://www.youtube.com/watch?v=cEgbPHcUhT4">
+                        <span>Video More <i class="fa-sharp fa-solid fa-plus"></i></span>
+                     </a>
                   </div>
                </div>
             </div>
          </div>
       </section>
+
+      <style>
+         .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+         }
+      </style>
+
+
       <!-- video area end -->
       <!-- team area start -->
 
@@ -1040,12 +1066,12 @@
 
       </div>
 
-      <div class="row">
+      <!-- <div class="row">
          <div class="team-btn text-center wow rrfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
             <a class="rr-btn-black" href="team.html"><span>View all Team <i
                      class="fa-sharp fa-solid fa-plus"></i></span></a>
          </div>
-      </div>
+      </div> -->
 
       <!-- </div>
       </section>  -->
@@ -1172,7 +1198,7 @@
                         </div>
                      </div>
                      <div class="rr-counter-btn">
-                        <a class="rr-btn-black" href="service-details.html"><span>learn more <i
+                        <a class="rr-btn-black" href="cilt-hastaliklari.html"><span>learn more <i
                                  class="fa-sharp fa-solid fa-plus"></i></span></a>
                      </div>
                   </div>
@@ -1296,13 +1322,14 @@
                                                 </div>
                                              </div>
                                              <div class="rr-tab-link">
-                                                <a href="service-details.html"><span>+</span> Best Medical & Health Care
+                                                <a href="cilt-hastaliklari.html"><span>+</span> Best Medical & Health
+                                                   Care
                                                    mistaken idea of
                                                    denouncing.</a>
                                              </div>
                                           </div>
-                                          <a class="rr-btn-black mb-20" href="service-details.html"><span>Click Here <i
-                                                   class="fa-sharp fa-solid fa-plus"></i></span></a>
+                                          <a class="rr-btn-black mb-20" href="cilt-hastaliklari.html"><span>Click Here
+                                                <i class="fa-sharp fa-solid fa-plus"></i></span></a>
                                        </div>
                                     </div>
 
@@ -1355,13 +1382,14 @@
                                                 </div>
                                              </div>
                                              <div class="rr-tab-link">
-                                                <a href="service-details.html"><span>+</span> Best Medical & Health Care
+                                                <a href="cilt-hastaliklari.html"><span>+</span> Best Medical & Health
+                                                   Care
                                                    mistaken idea of
                                                    denouncing.</a>
                                              </div>
                                           </div>
-                                          <a class="rr-btn-black mb-20" href="service-details.html"><span>Click Here <i
-                                                   class="fa-sharp fa-solid fa-plus"></i></span></a>
+                                          <a class="rr-btn-black mb-20" href="cilt-hastaliklari.html"><span>Click Here
+                                                <i class="fa-sharp fa-solid fa-plus"></i></span></a>
                                        </div>
                                     </div>
 
@@ -1414,13 +1442,14 @@
                                                 </div>
                                              </div>
                                              <div class="rr-tab-link">
-                                                <a href="service-details.html"><span>+</span> Best Medical & Health Care
+                                                <a href="cilt-hastaliklari.html"><span>+</span> Best Medical & Health
+                                                   Care
                                                    mistaken idea of
                                                    denouncing.</a>
                                              </div>
                                           </div>
-                                          <a class="rr-btn-black mb-20" href="service-details.html"><span>Click Here <i
-                                                   class="fa-sharp fa-solid fa-plus"></i></span></a>
+                                          <a class="rr-btn-black mb-20" href="cilt-hastaliklari.html"><span>Click Here
+                                                <i class="fa-sharp fa-solid fa-plus"></i></span></a>
                                        </div>
                                     </div>
 
@@ -1473,13 +1502,14 @@
                                                 </div>
                                              </div>
                                              <div class="rr-tab-link">
-                                                <a href="service-details.html"><span>+</span> Best Medical & Health Care
+                                                <a href="cilt-hastaliklari.html"><span>+</span> Best Medical & Health
+                                                   Care
                                                    mistaken idea of
                                                    denouncing.</a>
                                              </div>
                                           </div>
-                                          <a class="rr-btn-black mb-20" href="service-details.html"><span>Click Here <i
-                                                   class="fa-sharp fa-solid fa-plus"></i></span></a>
+                                          <a class="rr-btn-black mb-20" href="cilt-hastaliklari.html"><span>Click Here
+                                                <i class="fa-sharp fa-solid fa-plus"></i></span></a>
                                        </div>
                                     </div>
 
@@ -1755,11 +1785,11 @@
                            <h4 class="rr-footer-title">Service</h4>
                            <div class="rr-footer-list ">
                               <ul>
-                                 <li><a href="service-details.html">Why choose us</a></li>
-                                 <li><a href="service-details.html"> Our solutions</a></li>
-                                 <li><a href="service-details.html">Partners</a></li>
-                                 <li><a href="service-details.html">Core values</a></li>
-                                 <li><a href="service-details.html">Our projects</a></li>
+                                 <li><a href="cilt-hastaliklari.html">Why choose us</a></li>
+                                 <li><a href="cilt-hastaliklari.html"> Our solutions</a></li>
+                                 <li><a href="cilt-hastaliklari.html">Partners</a></li>
+                                 <li><a href="cilt-hastaliklari.html">Core values</a></li>
+                                 <li><a href="cilt-hastaliklari.html">Our projects</a></li>
                               </ul>
                            </div>
                         </div>
@@ -1770,11 +1800,11 @@
                            <h4 class="rr-footer-title">Quick Link</h4>
                            <div class="rr-footer-list">
                               <ul>
-                                 <li><a href="service-details.html">Residents</a></li>
-                                 <li><a href="service-details.html">Medical</a></li>
-                                 <li><a href="service-details.html">Online Service</a></li>
-                                 <li><a href="service-details.html">Visiting</a></li>
-                                 <li><a href="service-details.html">Employment</a></li>
+                                 <li><a href="cilt-hastaliklari.html">Residents</a></li>
+                                 <li><a href="cilt-hastaliklari.html">Medical</a></li>
+                                 <li><a href="cilt-hastaliklari.html">Online Service</a></li>
+                                 <li><a href="cilt-hastaliklari.html">Visiting</a></li>
+                                 <li><a href="cilt-hastaliklari.html">Employment</a></li>
                               </ul>
                            </div>
                         </div>
@@ -1814,9 +1844,9 @@
                      data-wow-delay=".5s">
                      <div class="rr-copyright-right text-center text-md-end">
                         <a href="about.html">About Us </a>
-                        <a href="service-details.html">Events</a>
+                        <a href="cilt-hastaliklari.html">Events</a>
                         <a href="blog.html">News</a>
-                        <a href="service-details.html">Portfolio</a>
+                        <a href="cilt-hastaliklari.html">Portfolio</a>
                      </div>
                   </div>
                </div>
