@@ -1043,4 +1043,73 @@ document.addEventListener('DOMContentLoaded', function() {
 	   });
 	});
  });
+
  
+ document.addEventListener("DOMContentLoaded", function () {
+    const langSelect = document.querySelector(".rr-header-2-lang select");
+    const niceSelect = document.querySelector(".nice-select .current");
+
+    // Dil kodları ile görünen isimleri eşleştiriyoruz
+    const languageNames = {
+        "tr": "Türkçe",
+        "en": "English",
+        "ar": "العربية",
+        "ru": "Русский",
+        "de": "Deutsch"
+    };
+
+    // Daha önce seçilen dili al (Varsa), yoksa varsayılan "tr" olsun
+    const savedLang = localStorage.getItem("selectedLanguage") || "tr";
+
+    // Sayfa yüklendiğinde dropdown'ı doğru dile ayarla
+    updateLanguageUI(savedLang);
+
+    // Dil değiştirildiğinde yönlendirme yap
+    langSelect.addEventListener("change", function () {
+        const selectedLang = getLanguageCode(this.value);
+        changeLanguage(selectedLang);
+    });
+
+    // Nice Select içindeki özel listeye de event ekleyelim
+    document.querySelectorAll(".nice-select .option").forEach((option) => {
+        option.addEventListener("click", function () {
+            const selectedLang = getLanguageCode(this.getAttribute("data-value"));
+            changeLanguage(selectedLang);
+        });
+    });
+
+    // Seçilen dili kaydedip yönlendiren fonksiyon
+    function changeLanguage(lang) {
+        localStorage.setItem("selectedLanguage", lang); // Seçilen dili kaydet
+
+        if (lang === "tr") {
+            // Eğer Türkçe seçilirse ana sayfaya dön
+            window.location.href = "/index.html";
+        } else {
+            // Diğer diller için /locales/{dil}/index.html'e yönlendir
+            window.location.href = `/locales/${lang}/index.html`;
+        }
+    }
+
+    // Seçili dili dropdown UI'ya uygula
+    function updateLanguageUI(lang) {
+        if (languageNames[lang]) {
+            niceSelect.textContent = languageNames[lang]; // Nice Select güncelle
+            langSelect.value = lang; // Normal select güncelle
+        }
+    }
+
+    // Dil adlarını kodlara çeviren fonksiyon
+    function getLanguageCode(language) {
+        const languages = {
+            "Türkçe": "tr",
+            "İngilizce": "en",
+            "English": "en",
+            "Arapça": "ar",
+            "Arabic": "ar",
+            "Rusça": "ru",
+            "Almanca": "de"
+        };
+        return languages[language] || "tr"; // Varsayılan dil Türkçe
+    }
+});
