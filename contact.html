@@ -366,43 +366,68 @@
                <div class="col-xl-6 col-lg-3 col-md-1"></div>
                <div class="col-xl-4 col-lg-9 col-md-10">
                   <div class="rr-form-box text-center">
-                     <b></b>
                      <h4 class="rr-section-title pb-60">Randevu Oluşturma</h4>
-                     <form>
+                     <form id="appointment-form">
                         <div class="row">
                            <div class="col-xl-6 col-lg-6 col-md-6 mb-20">
                               <div class="rr-form-input-box rr-form-input-main">
-                                 <input type="text" placeholder="İsim">
+                                 <input type="text" name="name" id="name" placeholder="İsim" required>
                               </div>
                            </div>
                            <div class="col-xl-6 col-lg-6 col-md-6 mb-20">
                               <div class="rr-form-input-box rr-form-input-main">
-                                 <input type="email" placeholder="E-Posta">
+                                 <input type="email" name="email" id="email" placeholder="E-Posta" required>
                               </div>
                            </div>
-
                            <div class="col-xl-12 col-lg-12 col-md-12 mb-20">
                               <div class="rr-form-input-box rr-form-input-main">
-                                 <input type="text" placeholder="Adres">
+                                 <input type="text" name="address" id="address" placeholder="Adres" required>
                               </div>
-                           </div>
-                           <div class=" col-md-12 col-12">
-
                            </div>
                            <div class="col-12 mb-20">
                               <div class="rr-form-textarea-box">
-                                 <textarea placeholder="Mesaj"></textarea>
+                                 <textarea name="message" id="message" placeholder="Mesaj" required></textarea>
                               </div>
                            </div>
-
+                           <div class="col-12">
+                              <button class="rr-btn-1 rr-form-theme-bg" type="submit"><span>Randevu
+                                    Oluştur</span></button>
+                           </div>
                         </div>
                      </form>
-                     <button class="rr-btn-1 rr-form-theme-bg" type="submit"><span>Randevu Oluştur</span></button>
+                     <div id="response-message" style="margin-top: 15px; font-weight: bold;"></div>
                   </div>
                </div>
                <div class="col-xl-2 col-lg-10 col-md-1"></div>
             </div>
          </div>
+
+         <script>
+            document.getElementById("appointment-form").addEventListener("submit", function (event) {
+               event.preventDefault(); // Sayfanın yeniden yüklenmesini engelle
+
+               let formData = new FormData(this);
+
+               fetch("mail.php", {
+                  method: "POST",
+                  body: formData
+               })
+                  .then(response => response.text())
+                  .then(result => {
+                     let responseMessage = document.getElementById("response-message");
+                     if (result === "success") {
+                        responseMessage.innerHTML = "<span style='color:green;'>Randevunuz Oluşturulmuştur!</span>";
+                     } else {
+                        responseMessage.innerHTML = "<span style='color:red;'>Bir Hata Meydana Geldi!</span>";
+                     }
+                  })
+                  .catch(error => {
+                     document.getElementById("response-message").innerHTML = "<span style='color:red;'>Bir Hata Meydana Geldi!</span>";
+                  });
+            });
+         </script>
+
+
       </section>
 
    </main>

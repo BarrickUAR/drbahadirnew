@@ -303,9 +303,9 @@
                            <li class="has-dropdown">
                               <a href="#">Sayfalar</a>
                               <ul class="submenu rr-submenu">
-                                 <li><a href="ekibimiz.html">Ekibimiz</a></li>
                                  <li><a href="videolar.html">Videolar</a></li>
-                                 <li><a href="doctors.html">Hekimler</a></li>
+                                 <li><a href="ekibimiz.html">Ekibimiz</a></li>
+                                 <li><a href="hekimlerimiz.html">Hekimlerimiz</a></li>
                               </ul>
                            </li>
                            <li class="has-dropdown">
@@ -409,65 +409,87 @@
       <section class="rr-contact-area fix" data-bg-color="#21313f">
          <div class="container">
             <div class="row">
-               <div class="col-xl-8 col-lg-8 col-md-12 col-12 wow rrfadeUp" data-wow-duration=".9s"
-                  data-wow-delay=".3s">
-                  <div class="rr-contact-1-form mb-50 mr-30">
-                     <div class="rr-contact-1-form-box text-center mt-70">
-                        <form>
-                           <div class="row">
-                              <!-- Kullanıcı Bilgileri -->
-                              <div class="col-xl-4 col-md-4 col-12 mb-30">
-                                 <div class="rr-form-input-box rr-contact-1-border">
-                                    <input type="text" autocomplete="off" placeholder="Adınız*" required>
-                                 </div>
-                              </div>
-                              <div class="col-xl-4 col-md-4 col-12 mb-30">
-                                 <div class="rr-form-input-box rr-contact-1-border">
-                                    <input autocomplete="off" type="email" placeholder="Mail Adresiniz" required>
-                                 </div>
-                              </div>
-                              <div class="col-xl-4 col-md-4 col-12 mb-30">
-                                 <div class="rr-form-input-box rr-contact-1-border">
-                                    <!-- Tarih Yazmalı ve Maskelenmiş -->
-                                    <input type="text" id="date-input" autocomplete="off"
-                                       placeholder="Tarih* (GG/AA/YYYY)" required>
-                                 </div>
-                              </div>
-                           </div>
-                        </form>
-                        <button class="rr-btn rr-form-theme-bg" type="submit"><span>Randevu Oluştur!</span></button>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xl-4 col-lg-4 col-md-12 col-12 wow rrfadeUp" data-wow-duration=".9s"
-                  data-wow-delay=".5s">
-                  <div class="rr-contact-1-wapp">
-                     <div class="rr-contact-1-item d-flex align-items-center">
-                        <div class="rr-contact-1-icon mr-20">
-                           <span><i class="fa-solid fa-envelope"></i></span>
+                <div class="col-xl-8 col-lg-8 col-md-12 col-12 wow rrfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
+                    <div class="rr-contact-1-form mb-50 mr-30">
+                        <div class="rr-contact-1-form-box text-center mt-70">
+                            <form id="appointment-form">
+                                <div class="row">
+                                    <!-- Adınız -->
+                                    <div class="col-xl-4 col-md-4 col-12 mb-30">
+                                        <div class="rr-form-input-box rr-contact-1-border">
+                                            <input type="text" id="name" name="name" autocomplete="off" placeholder="Adınız*" required>
+                                        </div>
+                                    </div>
+                                    <!-- Mail Adresiniz -->
+                                    <div class="col-xl-4 col-md-4 col-12 mb-30">
+                                        <div class="rr-form-input-box rr-contact-1-border">
+                                            <input type="email" id="email" name="email" autocomplete="off" placeholder="Mail Adresiniz" required>
+                                        </div>
+                                    </div>
+                                    <!-- Tarih -->
+                                    <div class="col-xl-4 col-md-4 col-12 mb-30">
+                                        <div class="rr-form-input-box rr-contact-1-border">
+                                            <input type="text" id="date" name="date" autocomplete="off" placeholder="Tarih* (GG/AA/YYYY)" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="rr-btn rr-form-theme-bg" type="submit"><span>Randevu Oluştur!</span></button>
+                            </form>
+                            <div id="response-message" style="margin-top: 15px; font-weight: bold;"></div>
                         </div>
-                        <div class="rr-contact-1-info">
-                           <h4>Bize ulaşın!</h4>
-                           <span><a
-                                 href="mailto:info@drmehmetilteberbahadir.net">info@drmehmetilteberbahadir.net</a></span>
-                        </div>
-                     </div>
-                     <div class="rr-contact-1-item d-flex align-items-center">
-                        <div class="rr-contact-1-icon mr-20">
-                           <span><i class="fa-solid fa-location-dot"></i></span>
-                        </div>
-                        <div class="rr-contact-1-info">
-                           <h4>Adresimiz</h4>
-                           <span><a href="https://maps.app.goo.gl/GnDUzdL6u597ZMoS7">Maltepe Mah. Eski
-                                 Çırpıcı Yolu Sok. No:2/63 Kat:11 E-5 Karayolu Merter Metro İstasyon Yanı Merter İş
-                                 Merkezi Zeytinburnu / İstanbul
-                                 25</a></span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                </div>
             </div>
-         </div>
+        </div>
+        
+
+
+        <script>
+document.getElementById("date").addEventListener("input", function (event) {
+    let value = event.target.value.replace(/\D/g, ""); // Sadece rakamları al
+    let formattedDate = "";
+
+    // Gün
+    if (value.length > 0) {
+        formattedDate += value.substring(0, 2);
+    }
+    // Ay
+    if (value.length > 2) {
+        formattedDate += "/" + value.substring(2, 4);
+    }
+    // Yıl (4 karakterle sınırla)
+    if (value.length > 4) {
+        formattedDate += "/" + value.substring(4, 8);
+    }
+
+    event.target.value = formattedDate;
+});
+
+document.getElementById("appointment-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Sayfanın yeniden yüklenmesini engelle
+
+    let formData = new FormData(this);
+
+    fetch("mail.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(result => {
+        let responseMessage = document.getElementById("response-message");
+        if (result === "success") {
+            responseMessage.innerHTML = "<span style='color:green;'>Randevunuz Oluşturulmuştur!</span>";
+        } else {
+            responseMessage.innerHTML = "<span style='color:red;'>Bir Hata Meydana Geldi!</span>";
+        }
+    })
+    .catch(error => {
+        document.getElementById("response-message").innerHTML = "<span style='color:red;'>Bir Hata Meydana Geldi!</span>";
+    });
+});
+</script>
+
+        
       </section>
 
       <script>
@@ -1082,7 +1104,8 @@
                                  <i class="fa-solid fa-location-dot"></i> <a href="#"> Merter İş Merkezi - Kat 11/63</a>
                               </div>
                               <div class="rr-footer-widget-content-list-item">
-                                 <i class="fa-sharp fa-solid fa-phone"></i><a href="tel:+902126772424">+90 212 677 24
+                                 <i class="fa-sharp fa-solid fa-phone"></i><a href="tel:+02125550055">+90 (212) 555 00
+                                    55
                                     24</a>
                               </div>
                            </div>
@@ -1118,12 +1141,12 @@
                            <h4 class="rr-footer-title">Çalışma Saatlerimiz</h4>
                            <div class="rr-footer-contact">
                               <ul>
-                                 <li><span>Pazartesi ---------- 09.00 - 17.00</span></li>
-                                 <li><span>Salı ---------- 09.00 - 17.00</span></li>
-                                 <li><span>Çarşamba ---------- 09.00 - 17.00</span></li>
-                                 <li><span>Perşembe ------- 09.00 - 17.00</span></li>
-                                 <li><span>Cuma ---------- 09.00 - 17.00</span></li>
-                                 <li><span>Cumartesi ---------- 09.00 - 17.00</span></li>
+                                 <li><span>Pazartesi - 09.00 - 17.00</span></li>
+                                 <li><span>Salı - 09.00 - 17.00</span></li>
+                                 <li><span>Çarşamba - 09.00 - 17.00</span></li>
+                                 <li><span>Perşembe - 09.00 - 17.00</span></li>
+                                 <li><span>Cuma -09.00 - 17.00</span></li>
+                                 <li><span>Cumartesi - 09.00 - 17.00</span></li>
                               </ul>
                            </div>
                         </div>
@@ -1154,7 +1177,7 @@
 
    <!-- WhatsApp Butonu -->
    <!-- WhatsApp Button -->
-   <a href="tel:+902126772424" target="_blank" class="whatsapp-button z-index-2">
+   <a href="tel:+092125550055" target="_blank" class="whatsapp-button z-index-2">
       <i class="bi bi-whatsapp"></i>
    </a>
 
