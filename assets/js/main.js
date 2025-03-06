@@ -1044,21 +1044,20 @@
   }
 })(jQuery);
 
+// Language Selector
+
 document.addEventListener("DOMContentLoaded", function () {
   const selectElement = document.querySelector(".nice-select");
   const spanCurrent = selectElement.querySelector(".current");
   const selectOptions = selectElement.querySelectorAll(".option");
 
-  // Dil seçimi yapıldığında bayrak ve metni güncelle
   selectOptions.forEach((option) => {
     option.addEventListener("click", function () {
       const selectedLang = this.textContent.trim();
       const selectedImg = this.querySelector("img").src;
 
-      // Güncellenmiş bayrağı ve dili başlığa yerleştir
       spanCurrent.innerHTML = `<img src="${selectedImg}" width="20" height="20" alt="${selectedLang}"> ${selectedLang}`;
 
-      // Seçili olan öğeyi işaretle
       selectOptions.forEach((opt) => opt.classList.remove("selected", "focus"));
       this.classList.add("selected", "focus");
     });
@@ -1069,7 +1068,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const langSelect = document.querySelector(".rr-header-2-lang select");
   const niceSelect = document.querySelector(".nice-select .current");
 
-  // Dil kodları ile görünen isimleri eşleştiriyoruz
   const languageNames = {
     tr: "Türkçe",
     en: "English",
@@ -1078,19 +1076,15 @@ document.addEventListener("DOMContentLoaded", function () {
     de: "Deutsch",
   };
 
-  // Daha önce seçilen dili al (Varsa), yoksa varsayılan "tr" olsun
   const savedLang = localStorage.getItem("selectedLanguage") || "tr";
 
-  // Sayfa yüklendiğinde dropdown'ı doğru dile ayarla
   updateLanguageUI(savedLang);
 
-  // Dil değiştirildiğinde yönlendirme yap
   langSelect.addEventListener("change", function () {
     const selectedLang = getLanguageCode(this.value);
     changeLanguage(selectedLang);
   });
 
-  // Nice Select içindeki özel listeye de event ekleyelim
   document.querySelectorAll(".nice-select .option").forEach((option) => {
     option.addEventListener("click", function () {
       const selectedLang = getLanguageCode(this.getAttribute("data-value"));
@@ -1098,28 +1092,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Seçilen dili kaydedip yönlendiren fonksiyon
   function changeLanguage(lang) {
-    localStorage.setItem("selectedLanguage", lang); // Seçilen dili kaydet
+    localStorage.setItem("selectedLanguage", lang);
 
     if (lang === "tr") {
       // Eğer Türkçe seçilirse ana sayfaya dön
       window.location.href = "/index.html";
     } else {
-      // Diğer diller için /locales/{dil}/index.html'e yönlendir
       window.location.href = `/locales/${lang}/index.html`;
     }
   }
 
-  // Seçili dili dropdown UI'ya uygula
   function updateLanguageUI(lang) {
     if (languageNames[lang]) {
-      niceSelect.textContent = languageNames[lang]; // Nice Select güncelle
-      langSelect.value = lang; // Normal select güncelle
+      niceSelect.textContent = languageNames[lang];
+      langSelect.value = lang;
     }
   }
 
-  // Dil adlarını kodlara çeviren fonksiyon
   function getLanguageCode(language) {
     const languages = {
       Türkçe: "tr",
@@ -1133,3 +1123,76 @@ document.addEventListener("DOMContentLoaded", function () {
     return languages[language] || "tr"; // Varsayılan dil Türkçe
   }
 });
+
+// Language Selector
+
+// Auto Language
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Kullanıcının daha önce seçtiği dil var mı?
+  const savedLang =
+    localStorage.getItem("siteLanguage") || getCookie("siteLanguage");
+
+  let selectedLang = savedLang || detectUserLanguage();
+
+  // Seçilen dili uygula
+  applyLanguage(selectedLang);
+
+  // Dil değiştirme butonlarını dinle
+  document.querySelectorAll("[data-lang]").forEach((button) => {
+    button.addEventListener("click", function () {
+      let lang = this.getAttribute("data-lang");
+      applyLanguage(lang);
+    });
+  });
+});
+
+// Tarayıcı diline göre varsayılan dil belirleme
+function detectUserLanguage() {
+  const userLang = navigator.language || navigator.userLanguage;
+
+  if (userLang.startsWith("ar")) return "ar";
+  if (userLang.startsWith("tr")) return "tr";
+  return "en"; // Varsayılan İngilizce
+}
+
+// Sayfadaki dili değiştir
+function applyLanguage(lang) {
+  // Tüm dil bölümlerini gizle
+  document
+    .querySelectorAll("[data-content]")
+    .forEach((el) => (el.style.display = "none"));
+
+  // Seçilen dili göster
+  document
+    .querySelectorAll(`[data-content="${lang}"]`)
+    .forEach((el) => (el.style.display = "block"));
+
+  // Kullanıcının seçimini kaydet
+  localStorage.setItem("siteLanguage", lang);
+  setCookie("siteLanguage", lang, 30);
+}
+
+// Çerez fonksiyonları
+function setCookie(name, value, days) {
+  let expires = "";
+  if (days) {
+    let date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(name) {
+  let nameEQ = name + "=";
+  let ca = document.cookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === " ") c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+// Auto Language
