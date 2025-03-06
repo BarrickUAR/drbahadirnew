@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address = $_POST["address"];
     $message = $_POST["message"];
 
-    $to = "seninmailin@example.com"; // Buraya kendi e-posta adresini yaz
+    $to = "info@drmehmetilteberbahadir.net";
     $subject = "Yeni Randevu Talebi";
     $body = "İsim: $name\nE-posta: $email\nAdres: $address\nMesaj: $message";
     $headers = "From: $email";
@@ -36,5 +36,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "error";
     }
 }
-?>
-
+?>a
