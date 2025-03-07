@@ -4287,6 +4287,34 @@ button.ui-button::-moz-focus-inner, input.ui-button::-moz-focus-inner {
   text-align: center;
 }
 
+.rr-photo-area{
+  width: 100%;
+;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  background: #203240;
+  opacity: 0.9;
+  z-index: 1;
+
+
+}
+
+.rr-photo-area img:hover{
+  opacity: 0.5;
+  transition: all;
+}
+
+.rr-photo-before::before {
+margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background: #203240;
+  opacity: 0.9;
+  z-index: 1;
+}
+
 .ui-datepicker .ui-datepicker-title select {
   font-size: 1em;
   margin: 1px 0;
@@ -4844,6 +4872,8 @@ button.ui-button::-moz-focus-inner, input.ui-button::-moz-focus-inner {
 body .ui-tooltip {
   border-width: 2px;
 }
+
+
 
 .ui-widget, .ui-widget button, .ui-widget input, .ui-widget select, .ui-widget textarea {
   font-family: Arial, Helvetica, sans-serif;

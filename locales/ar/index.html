@@ -187,7 +187,6 @@
         </div>
     </div>
 
-
     <!-- header top area end -->
     <!-- header main area start -->
 
@@ -226,7 +225,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- header main area end -->
     <header class="rr-header-height z-index-5">
@@ -340,10 +338,8 @@
             </div>
         </div>
 
-
         <!-- header area end -->
     </header>
-
 
 
     <main>
@@ -355,24 +351,26 @@
                     <div class="rr-slider-1-height">
                         <div class="container">
                             <div class="rr-slider-1-shap-star">
-                                <img src="/assets/img/slider/start-shap.png" alt="img">
+                                <img src="/assets/img/slider/start-shap.png" alt="صورة">
                             </div>
                             <div class="rr-slider-1-shap-plus">
-                                <img src="/assets/img/slider/plus-shap.png" alt="img">
+                                <img src="/assets/img/slider/plus-shap.png" alt="صورة">
                             </div>
                             <div class="rr-slider-1-shap-plus-2">
-                                <img src="/assets/img/slider/subtitle-shape-3.png" alt="img">
+                                <img src="/assets/img/slider/subtitle-shape-3.png" alt="صورة">
                             </div>
                             <div class="row align-items-center">
                                 <div class="col-xl-7 col-lg-7 col-md-6">
                                     <div class="rr-slider-1-content z-index-1">
                                         <div class="rr-slider-1-title-box">
                                             <span class="rr-slider-1-subtitle wow rrfadeUp" data-wow-duration=".9s"
-                                                data-wow-delay=".3s"><img src="/assets/img/testimonial/section-icon.png"
-                                                    alt="img">
-                                                ...</span>
+                                                data-wow-delay=".3s">
+                                                <img src="/assets/img/testimonial/section-icon.png" alt="صورة">...
+                                            </span>
                                             <h1 class="rr-slider-1-title pb-10 wow rrfadeUp" data-wow-duration=".9s"
-                                                data-wow-delay=".5s">الدكتور محمد إلتيبر بهادر</h1>
+                                                data-wow-delay=".5s">
+                                                الدكتور محمد إلتيبر بهادر
+                                            </h1>
                                             <p class="pb-30 wow rrfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">
                                                 في عيادتنا، نقدم علاجًا لمرض الصدفية، والأكزيما، والتهاب الجلد الدهني،
                                                 والحزاز المسطح، والسماك، والأمراض الروماتيزمية المرتبطة بالصدفية
@@ -383,11 +381,13 @@
                                         </div>
                                         <div class="rr-slider-1-button-box d-flex align-items-center">
                                             <a class="rr-btn-1 mr-30 wow rrfadeUp" data-wow-duration=".9s"
-                                                data-wow-delay=".7s" href="contact.html"><span>اتصل بنا<i
-                                                        class="fa-sharp fa-solid fa-plus"></i></span></a>
+                                                data-wow-delay=".7s" href="contact.html">
+                                                <span>اتصل بنا<i class="fa-sharp fa-solid fa-plus"></i></span>
+                                            </a>
                                             <a class="rr-btn-black wow rrfadeUp" data-wow-duration=".9s"
-                                                data-wow-delay=".9s" href="cilt-hastaliklari.html"><span> معرفة المزيد
-                                                    <i class="fa-sharp fa-solid fa-plus"></i></span></a>
+                                                data-wow-delay=".9s" href="cilt-hastaliklari.html">
+                                                <span>معرفة المزيد <i class="fa-sharp fa-solid fa-plus"></i></span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -395,12 +395,11 @@
                                     data-wow-delay=".5s">
                                     <div class="rr-slider-1-img p-relative pt-50">
                                         <div class="rr-slider-1-thumb z-index-2">
-                                            <img src="/assets/img/slider/hoca.png" alt="img">
+                                            <img src="/assets/img/slider/hoca.png" alt="صورة">
                                         </div>
                                         <div class="rr-slider-1-shap z-index-1">
-                                            <img src="/assets/img/slider/img-2.png" alt="img">
+                                            <img src="/assets/img/slider/img-2.png" alt="صورة">
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -410,6 +409,7 @@
                 </div>
             </div>
         </div>
+
 
 
         <!-- slider area end -->
@@ -422,90 +422,125 @@
                         data-wow-delay=".3s">
                         <div class="rr-contact-1-form mb-50 mr-30">
                             <div class="rr-contact-1-form-box text-center mt-70">
-                                <form>
+                                <form id="appointment-form">
                                     <div class="row">
-                                        <!-- معلومات المستخدم -->
+                                        <!-- اسمك -->
                                         <div class="col-xl-4 col-md-4 col-12 mb-30">
                                             <div class="rr-form-input-box rr-contact-1-border">
-                                                <input type="text" autocomplete="off" placeholder="اسمك*" required>
+                                                <input type="text" id="name" name="name" autocomplete="off"
+                                                    placeholder="اسمك*" required>
                                             </div>
                                         </div>
+                                        <!-- بريدك الإلكتروني -->
                                         <div class="col-xl-4 col-md-4 col-12 mb-30">
                                             <div class="rr-form-input-box rr-contact-1-border">
-                                                <input autocomplete="off" type="email"
-                                                    placeholder="عنوان بريدك الإلكتروني" required>
+                                                <input type="email" id="email" name="email" autocomplete="off"
+                                                    placeholder="بريدك الإلكتروني" required>
                                             </div>
                                         </div>
+                                        <!-- التاريخ -->
                                         <div class="col-xl-4 col-md-4 col-12 mb-30">
                                             <div class="rr-form-input-box rr-contact-1-border">
-                                                <!-- يجب أن يكون التاريخ بتنسيق معين -->
-                                                <input type="text" id="date-input" autocomplete="off"
+                                                <input type="text" id="date" name="date" autocomplete="off"
                                                     placeholder="التاريخ* (يوم/شهر/سنة)" required>
                                             </div>
                                         </div>
                                     </div>
+                                    <button class="rr-btn rr-form-theme-bg" type="submit"><span>احجز
+                                            موعدًا!</span></button>
                                 </form>
-                                <button class="rr-btn rr-form-theme-bg" type="submit"><span>احجز موعدًا!</span></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-12 col-12 wow rrfadeUp" data-wow-duration=".9s"
-                        data-wow-delay=".5s">
-                        <div class="rr-contact-1-wapp">
-                            <div class="rr-contact-1-item d-flex align-items-center">
-                                <div class="rr-contact-1-icon mr-20">
-                                    <span><i class="fa-solid fa-envelope"></i></span>
-                                </div>
-                                <div class="rr-contact-1-info">
-                                    <h4>اتصل بنا!</h4>
-                                    <span><a
-                                            href="mailto:info@drmehmetilteberbahadir.net">info@drmehmetilteberbahadir.net</a></span>
-                                </div>
-                            </div>
-                            <div class="rr-contact-1-item d-flex align-items-center">
-                                <div class="rr-contact-1-icon mr-20">
-                                    <span><i class="fa-solid fa-location-dot"></i></span>
-                                </div>
-                                <div class="rr-contact-1-info">
-                                    <h4>عنواننا</h4>
-                                    <span><a href="https://maps.app.goo.gl/GnDUzdL6u597ZMoS7">
-                                            Maltepe Mah. Eski Çırpıcı Yolu Sok. No:2/63 الطابق:11
-                                            بجانب محطة مترو مرتر، مركز أعمال مرتر، زيتون بورنو / اسطنبول</a></span>
-                                </div>
+                                <div id="response-message" style="margin-top: 15px; font-weight: bold;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <script>
+                document.getElementById("date").addEventListener("input", function (event) {
+                    let value = event.target.value.replace(/\D/g, ""); // فقط الأرقام
+                    let formattedDate = "";
+
+                    // اليوم
+                    if (value.length > 0) {
+                        formattedDate += value.substring(0, 2);
+                    }
+                    // الشهر
+                    if (value.length > 2) {
+                        formattedDate += "/" + value.substring(2, 4);
+                    }
+                    // السنة (4 أرقام كحد أقصى)
+                    if (value.length > 4) {
+                        formattedDate += "/" + value.substring(4, 8);
+                    }
+
+                    event.target.value = formattedDate;
+                });
+
+                document.getElementById("appointment-form").addEventListener("submit", function (event) {
+                    event.preventDefault(); // منع إعادة تحميل الصفحة
+
+                    let formData = new FormData(this);
+
+                    fetch("mail.php", {
+                        method: "POST",
+                        body: formData
+                    })
+                        .then(response => response.text())
+                        .then(result => {
+                            let responseMessage = document.getElementById("response-message");
+                            if (result === "success") {
+                                responseMessage.innerHTML = "<span style='color:green;'>تم حجز موعدك بنجاح!</span>";
+                            } else {
+                                responseMessage.innerHTML = "<span style='color:red;'>حدث خطأ! حاول مرة أخرى.</span>";
+                            }
+                        })
+                        .catch(error => {
+                            document.getElementById("response-message").innerHTML = "<span style='color:red;'>حدث خطأ! حاول مرة أخرى.</span>";
+                        });
+                });
+            </script>
         </section>
 
 
 
         <script>
             document.getElementById("date-input").addEventListener("input", function (event) {
-                let value = event.target.value;
-                value = value.replace(/[^0-9]/g, ''); // Sadece rakamlara izin ver
+                let value = event.target.value.replace(/\D/g, ""); // Sadece rakamları al
+                let formattedValue = "";
 
                 if (value.length > 2) {
-                    value = value.substring(0, 2) + '/' + value.substring(2);
-                }
-                if (value.length > 5) {
-                    value = value.substring(0, 5) + '/' + value.substring(5);
-                }
-
-                // Yılın 0 ile başlamasını engelle
-                let parts = value.split('/');
-                if (parts.length === 3 && parts[2].startsWith('0')) {
-                    parts[2] = parts[2].replace(/^0+/, '');
-                    value = parts.join('/');
+                    let day = value.substring(0, 2);
+                    if (parseInt(day) > 31) day = "31"; // Gün max 31 olabilir
+                    formattedValue = day + "/";
+                } else {
+                    formattedValue = value;
                 }
 
-                if (value.length > 10) {
-                    value = value.substring(0, 10);
+                if (value.length > 4) {
+                    let month = value.substring(2, 4);
+                    if (parseInt(month) > 12) month = "12"; // Ay max 12 olabilir
+                    formattedValue += month + "/";
+                } else {
+                    formattedValue += value.substring(2);
                 }
 
-                event.target.value = value;
+                if (value.length > 8) {
+                    let year = value.substring(4, 8);
+                    let intYear = parseInt(year);
+                    if (intYear < 1900) {
+                        year = "1900";
+                    } else if (intYear > 2099) {
+                        year = "2099";
+                    }
+                    formattedValue += year;
+                } else {
+                    formattedValue += value.substring(4);
+                }
+
+                event.target.value = formattedValue;
             });
+
         </script>
 
 
@@ -537,9 +572,9 @@
                             </div>
                             <div class="rr-features-content text-center">
                                 <h3 class="rr-features-title"><a href="/cilt-hastaliklari.html">الصدفية</a></h3>
-                                <p>الصدفية هي مرض جلدي يتميز باحمرار وظهور بقع متقشرة على الجلد.
-                                    حوالي مليون شخص في تركيا يعانون من الصدفية. على الرغم من أن أعراضها قد توحي بأنها
-                                    معدية، إلا أنها ليست مرضًا معديًا.</p>
+                                <p>الصدفية هي مرض جلدي يتميز باحمرار وظهور بقع متقشرة على الجلد. حوالي مليون شخص في
+                                    تركيا يعانون من الصدفية. على الرغم من أن أعراضها قد توحي بأنها معدية، إلا أنها ليست
+                                    مرضًا معديًا.</p>
                                 <a class="rr-features-btn" href="/cilt-hastaliklari.html"><span>تعرف على المزيد... <i
                                             class="fa-solid fa-angle-right"></i></span></a>
                             </div>
@@ -577,10 +612,9 @@
                             </div>
                             <div class="rr-features-content text-center">
                                 <h3 class="rr-features-title"><a href="/cilt-hastaliklari.html">الحزاز المسطح</a></h3>
-                                <p>الحزاز المسطح هو اضطراب جلدي يصيب أجزاء مختلفة من الجسم.
-                                    يُعتقد أن له محفزًا نفسيًا، ولكن لم يتم تحديد سبب نهائي له.
-                                    يظهر غالبًا على الجلد الداخلي، وحول الأعضاء التناسلية لدى الرجال والنساء، وكذلك على
-                                    الذراعين والساقين.</p>
+                                <p>الحزاز المسطح هو اضطراب جلدي يصيب أجزاء مختلفة من الجسم. يُعتقد أن له محفزًا نفسيًا،
+                                    ولكن لم يتم تحديد سبب نهائي له. يظهر غالبًا على الجلد الداخلي، وحول الأعضاء
+                                    التناسلية لدى الرجال والنساء، وكذلك على الذراعين والساقين.</p>
                                 <a class="rr-features-btn" href="/cilt-hastaliklari.html"><span>تعرف على المزيد... <i
                                             class="fa-solid fa-angle-right"></i></span></a>
                             </div>
@@ -597,10 +631,9 @@
                                 <img src="/assets/img/feature/icon-4.png" alt="صورة">
                             </div>
                             <div class="rr-features-content text-center">
-                                <h3 class="rr-features-title"><a href="/cilt-hastaliklari.html">السماك</a> </h3>
-                                <p>السماك الشائع، المعروف أيضًا باسم مرض قشور السمك، هو اضطراب جلدي.
-                                    يحدث عندما تتراكم خلايا الجلد الميتة على الجلد، مما يؤدي إلى ظهور قشور شبيهة بقشور
-                                    السمك.</p>
+                                <h3 class="rr-features-title"><a href="/cilt-hastaliklari.html">السماك</a></h3>
+                                <p>السماك الشائع، المعروف أيضًا باسم مرض قشور السمك، هو اضطراب جلدي. يحدث عندما تتراكم
+                                    خلايا الجلد الميتة على الجلد، مما يؤدي إلى ظهور قشور شبيهة بقشور السمك.</p>
                                 <a class="rr-features-btn" href="/cilt-hastaliklari.html"><span>تعرف على المزيد... <i
                                             class="fa-solid fa-angle-right"></i></span></a>
                             </div>
@@ -610,9 +643,9 @@
             </div>
         </section>
 
-
         <!-- features area end -->
         <!-- About area end -->
+
         <section class="rr-home2-about pb-100">
             <div class="container">
                 <div class="row align-items-center">
@@ -622,13 +655,11 @@
                                     src="/assets/img/testimonial/section-icon.png" alt="صورة"> من نحن <img
                                     src="/assets/img/testimonial/section-icon.png" alt="صورة"></span>
                             <h4 class="rr-section-title pb-5">من هو الدكتور محمد إلتبر بهادر؟</h4>
-                            <p class="rr-section-description">ولد عام 1971 في أنطاليا، أكمل تعليمه الابتدائي
-                                والثانوي في مدرسة بربروس الابتدائية (أنطاليا) وثانوية أنطاليا الأناضولية.
-                                من عام 1989 إلى 1996، درس في كلية الطب بجامعة إسطنبول.
-                                شارك في برامج تدريبية لوزارة الصحة حول العلاج بالأوزون والعلاج بالإبر الدقيقة.
-                                عمل مع مؤسسة سرطان الدم للأطفال وخدمات الطوارئ 112.
-                                وخلال مسيرته المهنية، عمل كطبيب في العديد من المستشفيات الخاصة.
-                            </p>
+                            <p class="rr-section-description">ولد عام 1971 في أنطاليا، أكمل تعليمه الابتدائي والثانوي في
+                                مدرسة بربروس الابتدائية (أنطاليا) وثانوية أنطاليا الأناضولية. من عام 1989 إلى 1996، درس
+                                في كلية الطب بجامعة إسطنبول. شارك في برامج تدريبية لوزارة الصحة حول العلاج بالأوزون
+                                والعلاج بالإبر الدقيقة. عمل مع مؤسسة سرطان الدم للأطفال وخدمات الطوارئ 112. وخلال مسيرته
+                                المهنية، عمل كطبيب في العديد من المستشفيات الخاصة.</p>
                         </div>
 
                         <div class="rr-button-block">
@@ -653,9 +684,11 @@
         </section>
 
 
+
         <!-- About area end -->
 
-        <!-- choose  area strat -->
+        <!-- choose  area start -->
+
         <section class="rr-choose pt-100 fix">
             <div class="container">
                 <div class="row">
@@ -757,6 +790,7 @@
 
 
 
+
         <!-- choose  area mobail end -->
         <!-- video area start -->
 
@@ -805,6 +839,7 @@
         </div>
 
         <!-- COUNTER  area start -->
+
         <section class="rr-counter-area pt-100 pb-100 grey-bg p-relative fix">
             <div class="rr-counter-shap">
                 <div class="rr-counter-shap-img wow slideInLeft">
@@ -923,6 +958,7 @@
             </div>
         </section>
 
+
         <!-- COUNTER  area end -->
 
 
@@ -940,6 +976,7 @@
                         </div>
                     </div>
 
+                    <!-- First blog post -->
                     <div class="col-xl-4 col-lg-4 col-md-6 mb-30 wow rrfadeUp" data-wow-duration=".9s"
                         data-wow-delay=".3s">
                         <div class="rr-blog-item">
@@ -982,7 +1019,7 @@
                         </div>
                     </div>
 
-                    <!-- المقال الثاني -->
+                    <!-- Second blog post -->
                     <div class="col-xl-4 col-lg-4 col-md-6 mb-30 wow rrfadeUp" data-wow-duration=".9s"
                         data-wow-delay=".5s">
                         <div class="rr-blog-item">
@@ -1025,7 +1062,7 @@
                         </div>
                     </div>
 
-                    <!-- المقال الثالث -->
+                    <!-- Third blog post -->
                     <div class="col-xl-4 col-lg-4 col-md-6 mb-30 wow rrfadeUp" data-wow-duration=".9s"
                         data-wow-delay=".7s">
                         <div class="rr-blog-item">
@@ -1068,6 +1105,7 @@
                         </div>
                     </div>
 
+                    <!-- View All Button -->
                     <div class="blog-btn text-center wow rrfadeUp pt-20" data-wow-duration=".9s" data-wow-delay=".9s">
                         <a class="rr-btn-black" href="/blog.html"><span>عرض جميع المقالات <i
                                     class="fa-sharp fa-solid fa-plus"></i></span></a>
@@ -1075,6 +1113,7 @@
                 </div>
             </div>
         </div>
+
 
 
         <!-- blog area end -->
@@ -1085,7 +1124,7 @@
 
     <footer>
         <div class="rr-footer-main p-relative fix" data-background="/assets/img/footer/footer-bg.jpg">
-            <!-- بداية قسم التذييل -->
+            <!-- Footer Main Section -->
             <div class="rr-footer-area pt-125 p-relative fix">
                 <div class="rr-footer-right-shap d-none d-xl-block">
                     <img src="/assets/img/footer/footer-shap.png" alt="الصورة" loading="lazy">
@@ -1093,6 +1132,7 @@
                 <div class="container">
                     <div class="rr-footer-border">
                         <div class="row">
+                            <!-- First Footer Column -->
                             <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6 mb-50 wow rrfadeUp" data-wow-duration=".9s"
                                 data-wow-delay=".3s">
                                 <div class="rr-footer-widget footer-cols-1">
@@ -1106,7 +1146,7 @@
                                                 الاثنين - السبت : 09:00 - 17:00</a>
                                         </div>
                                         <div class="rr-footer-widget-content-list-item">
-                                            <i class="fa-solid fa-location-dot"></i> <a href="#"> مركز أعمال ميرتر -
+                                            <i class="fa-solid fa-location-dot"></i> <a href="#">مركز أعمال ميرتر -
                                                 الطابق 11/63</a>
                                         </div>
                                         <div class="rr-footer-widget-content-list-item">
@@ -1114,6 +1154,7 @@
                                                 212 677 24 24</a>
                                         </div>
                                     </div>
+                                    <!-- Social Media Links -->
                                     <div class="rr-footer-social">
                                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                                         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
@@ -1122,9 +1163,13 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Second Footer Column (empty placeholder) -->
                             <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 mb-50 wow rrfadeUp" data-wow-duration=".9s"
                                 data-wow-delay=".5s">
                             </div>
+
+                            <!-- Third Footer Column (Quick Links) -->
                             <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 mb-50 wow rrfadeUp" data-wow-duration=".9s"
                                 data-wow-delay=".7s">
                                 <div class="rr-footer-widget footer-cols-3">
@@ -1140,18 +1185,20 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Fourth Footer Column (Business Hours) -->
                             <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6 mb-50 wow rrfadeUp" data-wow-duration=".9s"
                                 data-wow-delay=".9s">
                                 <div class="rr-footer-widget footer-cols-4">
                                     <h4 class="rr-footer-title">ساعات العمل</h4>
                                     <div class="rr-footer-contact">
                                         <ul>
-                                            <li><span>الاثنين ---------- 09:00 - 17:00</span></li>
-                                            <li><span>الثلاثاء ---------- 09:00 - 17:00</span></li>
-                                            <li><span>الأربعاء ---------- 09:00 - 17:00</span></li>
-                                            <li><span>الخميس ------- 09:00 - 17:00</span></li>
-                                            <li><span>الجمعة ---------- 09:00 - 17:00</span></li>
-                                            <li><span>السبت ---------- 09:00 - 17:00</span></li>
+                                            <li><span>الاثنين - 09:00 - 17:00</span></li>
+                                            <li><span>الثلاثاء - 09:00 - 17:00</span></li>
+                                            <li><span>الأربعاء - 09:00 - 17:00</span></li>
+                                            <li><span>الخميس - 09:00 - 17:00</span></li>
+                                            <li><span>الجمعة - 09:00 - 17:00</span></li>
+                                            <li><span>السبت - 09:00 - 17:00</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1160,22 +1207,20 @@
                     </div>
                 </div>
             </div>
-            <!-- نهاية قسم التذييل -->
 
-            <!-- بداية قسم حقوق النشر -->
+            <!-- Copyright Section -->
             <div class="rr-copyright-area p-relative">
                 <div class="container rr-copyright-broder rr-copyright-space">
                     <div class="row align-items-center">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-12 wow rrfadeUp" data-wow-duration=".9s"
                             data-wow-delay=".3s">
                             <div class="rr-copyright-left text-center text-md-start">
-                                <p>© 2024 <a href="#"> د. محمد إلتيبير بهادير، </a> جميع الحقوق محفوظة.</p>
+                                <p>© 2024 <a href="#">د. محمد إلتيبير بهادير، </a> جميع الحقوق محفوظة.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- نهاية قسم حقوق النشر -->
         </div>
     </footer>
 
