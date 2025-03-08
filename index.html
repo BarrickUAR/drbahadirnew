@@ -138,6 +138,12 @@
 
    <!-- search popup end -->
    <!-- rr-offcanvus-area-start -->
+   <!-- Hamburger Menü Butonu -->
+   <div class="hamburger-menu">
+      <i class="fas fa-bars"></i> <!-- Hamburger ikonu -->
+   </div>
+
+   <!-- Offcanvas Bölümü -->
    <div class="rroffcanvas-area">
       <div class="rroffcanvas">
          <div class="rroffcanvas__close-btn">
@@ -147,6 +153,21 @@
             <a href="index.html">
                <img src="assets/img/logo/logo.png" alt="img">
             </a>
+            <!-- Dil seçenekleri -->
+            <div class="lang">
+               <select style="display: none;">
+                  <option>Türkçe</option>
+                  <option>İngilizce</option>
+                  <option>Arapça</option>
+               </select>
+               <div class="nice-select" tabindex="0"><span class="current"> Türkçe</span>
+                  <ul class="list z-index-2">
+                     <li data-value="Türkçe" class="option selected focus">Türkçe</li>
+                     <li data-value="İngilizce" class="option">İngilizce</li>
+                     <li data-value="Arabic" class="option">Arapça</li>
+                  </ul>
+               </div>
+            </div>
          </div>
          <div class="rr-main-menu-mobile d-xl-none"></div>
          <div class="rroffcanvas__contact-info">
@@ -180,6 +201,8 @@
          </div>
       </div>
    </div>
+
+   <!-- Overlay Bölümü -->
    <div class="body-overlay"></div>
    <!-- rr-offcanvus-area-end -->
 
